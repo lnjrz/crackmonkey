@@ -1,103 +1,118 @@
-import Image from "next/image";
+import Image from "next/image"
+import Link from 'next/link'
+const cursos = [
+  {
+    id: 'gobierno',
+    title: 'Gobierno',
+    image: '/cracklabs/Modu1.jpg',
+    resumen: '',
+  },
+  {
+    id: 'seguridad',
+    title: 'Seguridad Pública',
+    image: '/cracklabs/Modu2.jpg',
+    resumen: '',
+  },
+  {
+  id: 'justicia',
+    title: 'Justicia',
+    image: '/cracklabs/Modu3.jpg',
+    resumen: '',
+  }
+ 
+  // Puedes añadir más cursos aquí
+]
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="bg-crack-beige min-h-screen px-6 py-12 text-crack-dark">
+      <div className="max-w-4xl mx-auto text-center">
+        {/* Logo y Título */}
+        <h1 className="text-4xl md:text-5xl font-extrabold text-crack-black mb-4">
+          CrackMonkey
+        </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        {/* Subtítulo */}
+        <p className="text-lg md:text-xl mb-8 text-crack-orange">            
+              <span className="text-black font-medium">
+                Aprende a analizar información pública de Gobierno, Seguridad Pública y Justicia como un profesional.  
+                    Cursos hechos para estudiantes y consultores que quieren sacarle jugo a los datos de México.
+              </span>
+          </p>
+
+
+        {/* Imagen destacada */}
+        <div className="mb-10">
+          <Image
+            src="/hero.svg" // Asegúrate de tener esta imagen en /public
+            alt="Banner CrackMonkey"
+            width={1200}
+            height={400}
+            className="w-full h-auto shadow-none border-none rounded-none"
+          />
+        </div>
+
+        {/* Botones */}
+        <div className="flex justify-center gap-4 mb-10">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/cracklabs"
+            className="border-2 border-crack-orange text-crack-orange hover:bg-crack-orange hover:text-white font-bold py-2 px-6 rounded-full transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            CrackLabs
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          href="/Informacion"
+            className="border-2 border-crack-orange text-crack-orange hover:bg-crack-orange hover:text-white font-bold py-2 px-6 rounded-full transition"
           >
-            Read our docs
+            Saber más
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+      {/* Cursos */}
+      
+      <h2 className="text-2xl font-bold text-crack-black mb-2 text-center">Laboratorios principales</h2>
+      <div className="overflow-x-auto whitespace-nowrap space-x-4 flex pb-4 mb-10" >
+        {cursos.map((curso) => (
+          <Link key={curso.id} href={`/cracklabs/${curso.id}`}>
+            <div className="inline-block w-64 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer">
+              <Image
+                src={curso.image}
+                alt={`Curso ${curso.title}`}
+                width={256}
+                height={144}
+                className="w-full h-40 object-contain object-center bg-white rounded-t-xl"
+              />
+              <div className="p-4">
+                <h2 className="text-xl font-semibold text-crack-black">{curso.title}</h2>
+                <p className="text-sm text-crack-dark">{curso.resumen}</p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Bloques informativos */}
+      <section className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
+        <div>
+          <h2 className="text-2xl font-bold text-crack-black mb-2">¿Qué es CrackMonkey?</h2>
+          <p>
+            <span className="text-black font-medium">
+            Un espacio de aprendizaje centrado en el uso de datos abiertos, especialmente del INEGI y otros sistemas públicos. Aquí aprenderás a usar herramientas como Excel, R y visualización interactiva para resolver problemas reales.
+            </span>
+          </p>
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold text-crack-black mb-2">¿A quién va dirigido?</h2>
+          <p>
+            <span className="text-black font-medium">
+            A estudiantes de últimos semestres, practicantes, investigadores o consultores que quieran entender mejor cómo funcionan los datos del país y cómo aprovecharlos con herramientas modernas.
+            </span>
+          </p>
+        </div>
+      </section>
+
+      
+
+    </main>
+  )
 }

@@ -67,7 +67,7 @@ export default function AboutPage() {
           {/* Foto e iconos a la izquierda */}
           <div className="flex flex-col items-center md:items-start">
             <Image
-              src="/informacion/Alan_perfil.png"
+              src="/Informacion/Alan_perfil.png"
               alt="Foto del creador"
               width={160}
               height={160}
